@@ -1,30 +1,18 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <title>Каталог</title>
-    <link rel="stylesheet" href="/static/css/style.css">
-</head>
-
-<body>
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block menu %}
     <div class="content">
-        <div class="header">
-            <a href="/">Главная</a>
-            <a href="/products/">Каталог</a>
-            <a href="/contact/">Контакты</a>
-        </div>
+        {% include 'mainapp/include/inc_main_menu.html' %}
+{% endblock %}
+{% block content %}
         <h1>Каталог</h1>
         <div class="img">
-            <a href="catalog/first_mag.html"><img src="/static/img/s-service-catalog.png" alt="Интернет магазин одежды">Интернет магазин одежды</a>
-            <a href="#"><img src="/static/img/3.png" alt="">Интернет магазин недвижимости</a>
-            <a href="#"><img src="/static/img/5.jpg" alt="">Интернет магазин №3</a>
+            {{ links_menu }}
+            <a href="{% url 'products_all'%}"><img src="/static/img/s-service-catalog.png" alt="Интернет магазин одежды">Все предложения</a>
+            <a href="{% url 'products_clothes'%}"><img src="/static/img/3.png" alt="">Интернет магазин недвижимости</a>
+            <a href="{% url 'products_another'%}"><img src="/static/img/5.jpg" alt="">Интернет магазин №3</a>
         </div>
     </div>
-    <div class="footer">
-        Все права защищены <a href="https://www.instagram.com/onmaxon/"> i`am </a> &copy;
-    </div>
-
+{% endblock %}
 </body>
-
 </html>
