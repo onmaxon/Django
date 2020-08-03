@@ -1,0 +1,18 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block menu %}
+    <div class="content">
+        {% include 'mainapp/include/inc_main_menu.html' %}
+{% endblock %}
+{% block content %}
+        <h1>Каталог</h1>
+        <div class="img">
+            {{ links_menu }}
+            <a href="{% url 'products_all'%}"><img src="/static/img/s-service-catalog.png" alt="Интернет магазин одежды">Все предложения</a>
+            <a href="{% url 'products_clothes'%}"><img src="/static/img/3.png" alt="">Интернет магазин недвижимости</a>
+            <a href="{% url 'products_another'%}"><img src="/static/img/5.jpg" alt="">Интернет магазин №3</a>
+        </div>
+    </div>
+{% endblock %}
+</body>
+</html>
