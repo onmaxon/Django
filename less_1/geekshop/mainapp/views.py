@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import ProductCategory, Product
 
 
 def main(request):
@@ -53,3 +54,21 @@ def contact(request):
         'title': 'Контакты',
     }
     return render(request, 'mainapp/contact.html', context)
+
+
+# def admin(request):
+#     context = {
+#         'title': 'Админ',
+#     }
+#     return render(request, 'mainapp/admin.html', context)
+
+
+
+
+def main(request):
+    title = 'главная'
+
+    products = Product.objects.all()[:4]
+
+    content = {'title': title, 'products': products}
+    return render(request, 'mainapp/index.html', content)
