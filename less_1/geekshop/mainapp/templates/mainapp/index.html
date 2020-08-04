@@ -1,0 +1,20 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block menu %}
+    <div class="content">
+        {% include 'mainapp/include/inc_main_menu.html' %}
+{% endblock %}
+{% block content %}
+        <h1>WSM WebStudioMoscow</h1>
+        <div class="center">
+            <img src="{% static 'img/logo_4.png' %}">
+            <div class="box_text">
+                <p><b>Добрый день</b>. Наша студия <i>WSM</i> всегда готова помочь вам с разработкой сайта, магазина, однострочника.</p>
+                <p>На нашем сайте вы можете заказать разработку, или купить уже готовый макет. <br>
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+</body>
+</html>
